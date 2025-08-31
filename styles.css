@@ -1587,8 +1587,7 @@ a:focus {
 }
 
 .add-to-cart-btn {
-    width: 100%;
-    padding: 0.75rem;
+    padding: 0.75rem 2rem;
     background: var(--gradient-primary);
     color: white;
     border: none;
@@ -1644,7 +1643,7 @@ svg {
 
 /* Multi-Peptide Serum Section Styles */
 .product-feature {
-    padding: 6rem 0;
+    padding: 3rem 1rem;
     background: linear-gradient(135deg, rgba(235, 0, 139, 0.03) 0%, rgba(140, 16, 128, 0.03) 50%, rgba(2, 0, 141, 0.03) 100%);
 }
 
@@ -1697,18 +1696,17 @@ svg {
 .feature-subtitle {
     font-size: 1.25rem;
     color: var(--gray-600);
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .feature-benefits {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
 }
 
 .benefit-item {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-bottom: 0.75rem;
     color: var(--gray-800);
     font-weight: 500;
 }
@@ -1780,5 +1778,188 @@ svg {
     
     .feature-title {
         font-size: 1.75rem;
+    }
+}
+
+/* Dr. Althea 345 Relief Cream Section Styles */
+.premium-product-showcase {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #fdfcfb 0%, #f1f8ff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-product-showcase::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: var(--gradient-primary);
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+.premium-product-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.premium-product-content {
+    position: relative;
+}
+
+.premium-product-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.premium-product-subtitle {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.benefit-card h4 {
+    font-size: 1.125rem;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+}
+
+.benefit-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: var(--gray-800);
+    font-weight: 500;
+}
+
+.premium-product-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-premium {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(235, 0, 139, 0.3);
+}
+
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(235, 0, 139, 0.4);
+}
+
+.premium-product-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.premium-product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.premium-product-image:hover img {
+    transform: scale(1.03);
+}
+
+.ingredient-badge {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .premium-product-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .premium-product-title {
+        font-size: 2rem;
+    }
+    
+    .premium-product-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .premium-product-title {
+        font-size: 1.75rem;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .premium-product-actions {
+        flex-direction: column;
     }
 }
