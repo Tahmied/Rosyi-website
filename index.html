@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosyi - Premium Beauty Products for Modern Girls</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Rosyi</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#products" class="nav-link">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <span class="cart-icon">🛍️</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Unleash Your <span class="gradient-text">Natural Glow</span>
+                </h1>
+                <p class="hero-description">
+                    Discover premium beauty products crafted for the modern girl. From skincare essentials to makeup must-haves, find everything you need to feel confident and beautiful.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="scrollToSection('products')">
+                        Shop Now
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                        Learn More
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Products</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4.9★</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-cards">
+                    <div class="floating-card card-1">
+                        <img src="https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Skincare">
+                        <span>Skincare</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <img src="https://images.pexels.com/photos/2113855/pexels-photo-2113855.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Makeup">
+                        <span>Makeup</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <img src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Fragrance">
+                        <span>Fragrance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+<section id="products-showcase" class="products-showcase">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Our Premium Collection</h2>
+            <p class="section-subtitle">Discover beauty essentials crafted for your unique glow</p>
+        </div>
+
+        <div class="showcase-tabs">
+            <button class="tab-btn active" data-tab="bestsellers">Best Sellers</button>
+            <button class="tab-btn" data-tab="new-arrivals">New Arrivals</button>
+            <button class="tab-btn" data-tab="skincare">Skincare</button>
+            <button class="tab-btn" data-tab="makeup">Makeup</button>
+        </div>
+
+        <div class="showcase-content">
+            <!-- Best Sellers -->
+            <div class="products-grid active" id="bestsellers">
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Vitamin C Serum">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Vitamin C Brightening Serum</h3>
+                        <p class="product-description">Powerful antioxidant serum for radiant skin</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(245)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$39.99</span>
+                            <span class="original-price">$49.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="1">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Add more bestseller products here -->
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/3997373/pexels-photo-3997373.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Lipstick">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Matte Liquid Lipstick</h3>
+                        <p class="product-description">Long-lasting color in 12 shades</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                            <span class="original-price">$29.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="3">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Arrivals -->
+            <div class="products-grid" id="new-arrivals">
+                <div class="product-card">
+                    <div class="product-badge">NEW</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/4202924/pexels-photo-4202924.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Night Serum">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Overnight Repair Serum</h3>
+                        <p class="product-description">Wake up to refreshed, glowing skin</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(87)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$45.99</span>
+                            <span class="original-price">$55.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="4">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Add more new arrival products here -->
+            </div>
+            
+            <!-- Skincare -->
+            <div class="products-grid" id="skincare">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6636305/pexels-photo-6636305.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Mask">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Detoxifying Clay Mask</h3>
+                        <p class="product-description">Deep cleanses and purifies pores</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(134)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$28.99</span>
+                            <span class="original-price">$34.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="5">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Add more skincare products here -->
+            </div>
+            
+            <!-- Makeup -->
+            <div class="products-grid" id="makeup">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/2113855/pexels-photo-2113855.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Foundation">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Weightless Foundation</h3>
+                        <p class="product-description">Buildable coverage, natural finish</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(201)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$36.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="6">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-badge">BEST SELLER</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop" alt="Face Cream">
+                        <div class="product-overlay">
+                            <button class="quick-view-btn">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Hydrating Face Cream</h3>
+                        <p class="product-description">24-hour moisture for all skin types</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$32.99</span>
+                            <span class="original-price">$42.99</span>
+                        </div>
+                        <button class="add-to-cart-btn" data-product-id="2">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Add more makeup products here -->
+            </div>
+        </div>
+
+        <div class="showcase-cta">
+            <a href="#" class="btn btn-outline">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- Multi-Peptide Serum Section -->
+<section id="copper-peptide-serum" class="product-feature">
+    <div class="container">
+        <div class="feature-container">
+            <div class="feature-image">
+                <img src="./Image/7143unkrqQL._SY679_.jpg">
+                <div class="product-badge premium-badge">PREMIUM FORMULA</div>
+            </div>
+            <div class="feature-content">
+                <h2 class="feature-title">Multi-Peptide + Copper Peptides 1% Serum</h2>
+                <p class="feature-subtitle">Advanced age-supporting serum with antioxidant protection</p>
+                
+                <div class="feature-benefits">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Targets advanced signs of aging</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Improves skin elasticity & firmness</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Provides antioxidant support</span>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">✨</span>
+                        <span>Combats dryness and environmental stress</span>
+                    </div>
+                </div>
+                
+                <p class="feature-description">
+                    Our comprehensive formula utilizes multiple skin support technologies that target multiple signs of aging at once. 
+                    With five well-studied peptide technologies, skin-friendly amino acids, and multiple hyaluronic acids, this serum 
+                    helps improve the appearance of fine lines while supporting your skin's overall elasticity, smoothness and firmness.
+                </p>
+                
+                <div class="feature-actions">
+                    <button class="btn btn-primary add-to-cart-btn" data-product-id="cp-1">View Full Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skin Care Products Section -->
+<section id="skincare" class="category-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Skin Care Collection</h2>
+            <p class="section-subtitle">Nourish your skin with our premium formulations</p>
+        </div>
+
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cleansers">
+                </div>
+                <h3>Cleansers</h3>
+                <p>Gentle formulas to purify your skin</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://images.pexels.com/photos/4202924/pexels-photo-4202924.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Moisturizers">
+                </div>
+                <h3>Moisturizers</h3>
+                <p>Hydration for every skin type</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Serums">
+                </div>
+                <h3>Serums & Treatments</h3>
+                <p>Targeted solutions for specific concerns</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+
+            <div class="category-card">
+                <div class="category-image">
+                    <img src="https://images.pexels.com/photos/6636305/pexels-photo-6636305.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Masks">
+                </div>
+                <h3>Masks</h3>
+                <p>Weekly treatments for radiant skin</p>
+                <a href="#" class="category-link">Explore →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Features Section -->
+    <section id="about" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Rosyi?</h2>
+                <p class="section-subtitle">Experience the difference with our premium beauty solutions</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Premium Quality</h3>
+                    <p class="feature-description">Carefully curated products from top beauty brands worldwide</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3 class="feature-title">Free Shipping</h3>
+                    <p class="feature-description">Free worldwide shipping on orders over $50</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3 class="feature-title">100% Authentic</h3>
+                    <p class="feature-description">Guaranteed authentic products with quality assurance</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Easy Returns</h3>
+                    <p class="feature-description">30-day hassle-free return policy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Another Collection Section -->
+<section class="collection-section">
+    <div class="container">
+        <div class="collection-header">
+            <h2>Makeup Essentials</h2>
+            <p>Create flawless looks with our premium makeup collection</p>
+            <a href="#" class="collection-cta">View Collection →</a>
+        </div>
+        
+        <div class="collection-grid">
+            <div class="collection-item large">
+                <img src="https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lipstick Collection">
+                <div class="collection-overlay">
+                    <h3>Lipstick Collection</h3>
+                    <p>30+ shades for every occasion</p>
+                    <a href="#" class="btn btn-white">Shop Now</a>
+                </div>
+            </div>
+            
+            <div class="collection-item">
+                <img src="https://images.pexels.com/photos/2113855/pexels-photo-2113855.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Foundation">
+                <div class="collection-overlay">
+                    <h3>Foundation</h3>
+                    <p>Flawless coverage</p>
+                    <a href="#" class="btn btn-white">Shop Now</a>
+                </div>
+            </div>
+            
+            <div class="collection-item">
+                <img src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Brushes">
+                <div class="collection-overlay">
+                    <h3>Brush Sets</h3>
+                    <p>Professional tools</p>
+                    <a href="#" class="btn btn-white">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Social Proof Section -->
+<section class="social-proof">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Loved by Beauty Enthusiasts</h2>
+            <p class="section-subtitle">Join our community of 500,000+ satisfied customers</p>
+        </div>
+        
+        <div class="proof-grid">
+            <div class="proof-item">
+                <div class="proof-number">500K+</div>
+                <div class="proof-label">Happy Customers</div>
+            </div>
+            
+            <div class="proof-item">
+                <div class="proof-number">4.9</div>
+                <div class="proof-label">Average Rating</div>
+            </div>
+            
+            <div class="proof-item">
+                <div class="proof-number">100+</div>
+                <div class="proof-label">Products</div>
+            </div>
+            
+            <div class="proof-item">
+                <div class="proof-number">10M+</div>
+                <div class="proof-label">Products Sold</div>
+            </div>
+        </div>
+        
+        <div class="press-logos">
+            <p>Featured In</p>
+            <div class="logos-grid">
+                <div class="logo-item">VOGUE</div>
+                <div class="logo-item">ALLURE</div>
+                <div class="logo-item">COSMO</div>
+                <div class="logo-item">GLAMOUR</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Join thousands of satisfied customers worldwide</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Amazing products! My skin has never looked better. The vitamin C serum is a game-changer!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop" alt="Sarah Johnson" class="author-avatar">
+                        <div>
+                            <h4 class="author-name">Sarah Johnson</h4>
+                            <span class="author-location">New York, USA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"The foundation is perfect! It lasts all day and gives me such natural-looking coverage."</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.pexels.com/photos/1462980/pexels-photo-1462980.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop" alt="Emma Davis" class="author-avatar">
+                        <div>
+                            <h4 class="author-name">Emma Davis</h4>
+                            <span class="author-location">London, UK</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Fast shipping and excellent customer service. I'm a customer for life!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=60&h=60&fit=crop" alt="Maria Garcia" class="author-avatar">
+                        <div>
+                            <h4 class="author-name">Maria Garcia</h4>
+                            <span class="author-location">Barcelona, Spain</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know about our products</p>
+        </div>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <button class="faq-question">
+                    What makes Rosyi products different?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Our products are formulated with premium ingredients, rigorously tested for effectiveness, and created with a focus on sustainability. We never test on animals and strive to use eco-friendly packaging.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    How do I choose the right products for my skin type?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We recommend taking our online skin quiz or consulting with our beauty experts via live chat. Generally, oily skin benefits from gel-based products, while dry skin needs richer cream formulations.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    What is your return policy?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>We offer a 30-day money-back guarantee on all unopened products and a 14-day return policy on opened products if you're not satisfied. Simply contact our customer service team to initiate a return.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Do you offer international shipping?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes, we ship to over 50 countries worldwide. Shipping costs and delivery times vary by location. You can calculate shipping costs at checkout before completing your purchase.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    Are your products cruelty-free?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Absolutely! We are proud to be 100% cruelty-free and never test our products on animals. We are also certified by Leaping Bunny, the gold standard for cruelty-free certification.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="faq-cta">
+            <p>Still have questions? <a href="#">Contact our beauty experts</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- New Newsletter Section -->
+<section class="newsletter-v2">
+    <div class="container">
+        <div class="newsletter-content">
+            <div class="newsletter-text">
+                <h2>Join the Beauty Club</h2>
+                <p>Subscribe to get exclusive offers, early access to new launches, and beauty tips from our experts.</p>
+                
+                <div class="newsletter-benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">🎁</span>
+                        <span>15% off your first order</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">⭐</span>
+                        <span>Exclusive member rewards</span>
+                    </div>
+                    <div class="benefit">
+                        <span class="benefit-icon">✉️</span>
+                        <span>Beauty tips & tutorials</span>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+                <p class="form-note">By subscribing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+<!-- New Footer Section -->
+<footer class="footer-v2">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <h3>Rosyi</h3>
+                    <p>Premium beauty products for the modern woman. Discover your natural glow with our carefully curated collection.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385h-3.047v-3.47h3.047v-2.643c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385c5.737-.9 10.125-5.864 10.125-11.854z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Shop</h4>
+                        <ul>
+                            <li><a href="#">Skincare</a></li>
+                            <li><a href="#">Makeup</a></li>
+                            <li><a href="#">Hair Care</a></li>
+                            <li><a href="#">Fragrance</a></li>
+                            <li><a href="#">Tools & Brushes</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Sustainability</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Affiliates</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h4>Help</h4>
+                        <ul>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Shipping & Returns</a></li>
+                            <li><a href="#">Track Order</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="payment-methods">
+                    <p>We Accept</p>
+                    <div class="payment-icons">
+                        <span class="payment-icon">💳</span>
+                        <span class="payment-icon">📱</span>
+                        <span class="payment-icon">🏦</span>
+                        <span class="payment-icon">🔒</span>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025 Rosyi Beauty. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+    <script>
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq-question').classList.remove('active');
+                    otherItem.querySelector('.faq-answer').classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            question.classList.toggle('active');
+            answer.classList.toggle('active');
+        });
+    });
+    
+    // Products Showcase Tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const productGrids = document.querySelectorAll('.products-grid');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Get the target tab
+            const targetTab = button.getAttribute('data-tab');
+            
+            // Hide all product grids
+            productGrids.forEach(grid => {
+                grid.classList.remove('active');
+            });
+            
+            // Show the target product grid
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+    
+    // Mobile Navigation
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+    
+    // Scroll function for buttons
+    window.scrollToSection = function(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+    
+    // Shopping cart functionality
+    const cartCount = document.getElementById('cart-count');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    let cartItems = 0;
+    
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            cartItems++;
+            cartCount.textContent = cartItems;
+            
+            // Add animation effect
+            cartCount.classList.add('pulse');
+            setTimeout(() => {
+                cartCount.classList.remove('pulse');
+            }, 300);
+        });
+    });
+});
+
+// Add to cart animation
+const style = document.createElement('style');
+style.textContent = `
+    .pulse {
+        animation: pulse 0.3s ease;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.3); }
+        100% { transform: scale(1); }
+    }
+`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
