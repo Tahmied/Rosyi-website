@@ -440,6 +440,227 @@ body {
 .feature-description {
     color: var(--gray-600);
     line-height: 1.6;
+    margin-top: 1rem;
+}
+
+
+/* The Ordinary Hair Serum Section Styles */
+.hs-premium-section {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
+    position: relative;
+}
+
+.hs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hs-product-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hs-image-container {
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    order: 2;
+}
+
+.hs-product-image {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+}
+
+.hs-product-image:hover {
+    transform: translateY(-8px);
+}
+
+.hs-product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hs-content-wrapper {
+    padding: 1rem 0;
+    order: 1;
+}
+
+.hs-header {
+    margin-bottom: 2.5rem;
+}
+
+.hs-product-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.hs-product-subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    font-weight: 400;
+}
+
+.hs-benefits {
+    margin-bottom: 2.5rem;
+}
+
+.hs-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hs-benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.hs-benefit-text h4 {
+    font-size: 1.125rem;
+    color: var(--gray-800);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.hs-benefit-text p {
+    color: var(--gray-600);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.hs-ingredients {
+    margin-bottom: 2.5rem;
+}
+
+.hs-ingredients-title {
+    font-size: 1.25rem;
+    color: var(--gray-800);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.hs-ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.hs-ingredient {
+    padding: 0.6rem 1rem;
+    background: rgba(235, 0, 139, 0.08);
+    color: var(--primary);
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.hs-ingredient:hover {
+    background: rgba(235, 0, 139, 0.12);
+    transform: translateY(-2px);
+}
+
+.hs-action-area {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hs-pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.hs-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-800);
+}
+
+.hs-value {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+.hs-add-to-cart {
+    background: var(--gray-800);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hs-add-to-cart:hover {
+    background: var(--gray-900);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .hs-product-display {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .hs-product-title {
+        font-size: 1.75rem;
+    }
+    
+    .hs-benefit-item {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hs-ingredients-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .hs-action-area {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hs-premium-section {
+        padding: 3rem 0;
+    }
+    
+    .hs-ingredients-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hs-product-title {
+        font-size: 1.5rem;
+    }
 }
 
 /* Testimonials Section */
@@ -1948,6 +2169,15 @@ svg {
         align-items: flex-start;
         gap: 1.5rem;
     }
+
+    .premium-product-image {
+        order: 1;
+    }
+
+    .premium-product-content {
+        order: 2;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -1961,5 +2191,211 @@ svg {
     
     .premium-product-actions {
         flex-direction: column;
+    }
+}
+
+/* BIODANCE Bio-Collagen Mask Section Styles */
+.minimal-product-section {
+    padding: 5rem 0;
+    background: #fafafa;
+    position: relative;
+}
+
+.minimal-product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.minimal-product-visual {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.product-visual {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.product-visual:hover {
+    transform: translateY(-5px);
+}
+
+.minimal-product-badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: var(--gradient-secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+.minimal-product-content {
+    padding: 1rem 0;
+}
+
+.minimal-product-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.minimal-product-subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.key-benefits {
+    margin-bottom: 1rem;
+}
+
+.benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.benefit-text h4 {
+    font-size: 1.125rem;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.benefit-text p {
+    color: var(--gray-600);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.unique-features {
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.feature {
+    margin-bottom: 1rem;
+}
+
+.feature:last-child {
+    margin-bottom: 0;
+}
+
+.feature-label {
+    display: block;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 0.25rem;
+}
+
+.feature p {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.minimal-product-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-800);
+}
+
+.package {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+.btn-minimal {
+    background: var(--gray-800);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-minimal:hover {
+    background: var(--gray-900);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .minimal-product-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+        width: 80%;
+    }
+    
+    .minimal-product-title {
+        font-size: 1.75rem;
+    }
+    
+    .benefit {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .minimal-product-actions {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .minimal-product-section {
+        padding: 3rem 0;
+    }
+    
+    .minimal-product-title {
+        font-size: 1.5rem;
+    }
+    
+    .unique-features {
+        padding: 1.25rem;
     }
 }
