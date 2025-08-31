@@ -443,6 +443,13 @@ body {
     margin-top: 1rem;
 }
 
+#actual-features-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gray-800);
+}
+
 
 /* The Ordinary Hair Serum Section Styles */
 .hs-premium-section {
@@ -1809,13 +1816,17 @@ a:focus {
 
 .add-to-cart-btn {
     padding: 0.75rem 2rem;
-    background: var(--gradient-primary);
+    background: var(--gradient-primary);;
     color: white;
     border: none;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+}
+
+#bv-cart-btn {
+    background: linear-gradient(135deg, #df41a2, #FFA500);
 }
 
 .add-to-cart-btn:hover {
@@ -2397,5 +2408,490 @@ svg {
     
     .unique-features {
         padding: 1.25rem;
+    }
+}
+
+
+/* Bee Venom Professional Gel Section Styles */
+.bv-premium-section {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom, #faf8f5, #fffbf7);
+    position: relative;
+}
+
+.bv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.bv-product-display {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.bv-content-wrapper {
+    padding: 1rem 0;
+    order: 2;
+}
+
+.bv-header {
+    margin-bottom: 2.5rem;
+}
+
+.bv-product-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.bv-product-subtitle {
+    font-size: 1.125rem;
+    color: #666;
+    font-weight: 400;
+}
+
+.bv-benefits {
+    margin-bottom: 2.5rem;
+}
+
+.bv-benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bv-benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #e37bbb, #FFA500);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bv-benefit-text h4 {
+    font-size: 1.125rem;
+    color: #2c2c2c;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.bv-benefit-text p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.bv-application {
+    margin-bottom: 2.5rem;
+}
+
+.bv-application-title {
+    font-size: 1.25rem;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.bv-application-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
+.bv-area {
+    padding: 0.6rem 1rem;
+    background: rgba(255, 215, 0, 0.1);
+    color: #b8860b;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.bv-action-area {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.bv-pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.bv-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+.bv-value {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+.bv-add-to-cart {
+    background: linear-gradient(135deg, #FFA500, #FF8C00);
+    color: white;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 165, 0, 0.25);
+}
+
+.bv-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 165, 0, 0.35);
+}
+
+.bv-image-container {
+    position: relative;
+    text-align: center;
+    width: fit-content;
+}
+
+.bv-product-image {
+    width: 100%;
+    width: 500px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease;
+}
+
+.bv-product-image:hover {
+    transform: translateY(-8px);
+}
+
+.bv-product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #e057a3, #FFA500);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .bv-product-display {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .bv-product-title {
+        font-size: 1.75rem;
+    }
+    
+    .bv-benefit-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .bv-application-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bv-action-area {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .bv-premium-section {
+        padding: 3rem 0;
+    }
+    
+    .bv-application-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .bv-product-title {
+        font-size: 1.5rem;
+    }
+    
+    .bv-benefit-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.25rem;
+    }
+}
+
+/* COSRX Snail Mucin Essence Section Styles */
+.cs-premium-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--white) 100%);
+    position: relative;
+}
+
+.cs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cs-product-display {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    justify-items: end;
+}
+
+.cs-image-container {
+    position: relative;
+    text-align: center;
+    order: 2;
+}
+
+.cs-product-image {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.4s ease;
+}
+
+.cs-product-image:hover {
+    transform: translateY(-8px);
+}
+
+.cs-product-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.cs-content-wrapper {
+    padding: 1rem 0;
+}
+
+.cs-header {
+    margin-bottom: 2rem;
+}
+
+.cs-korean-badge {
+    display: inline-block;
+    background: rgba(235, 0, 139, 0.1);
+    color: var(--primary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cs-product-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-800);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.cs-product-subtitle {
+    font-size: 1.125rem;
+    color: var(--gray-600);
+    font-weight: 400;
+}
+
+.cs-ingredient-highlight {
+    background: rgba(235, 0, 139, 0.05);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.cs-ingredient-percent {
+    margin-bottom: 0.75rem;
+}
+
+.cs-percent-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.cs-percent-label {
+    display: block;
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+.cs-ingredient-desc {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cs-benefits {
+    margin-bottom: 2rem;
+}
+
+.cs-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cs-benefit-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.cs-benefit-text h4 {
+    font-size: 1.125rem;
+    color: var(--gray-800);
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.cs-benefit-text p {
+    color: var(--gray-600);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.cs-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+.cs-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gray-100);
+    padding: 0.6rem 1rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    color: var(--gray-800);
+}
+
+.cs-feature-icon {
+    font-size: 1.125rem;
+}
+
+.cs-action-area {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cs-pricing {
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-800);
+}
+
+.cs-value {
+    color: var(--gray-600);
+    font-size: 0.875rem;
+}
+
+.cs-add-to-cart {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+}
+
+.cs-add-to-cart:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .cs-product-display {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .cs-product-title {
+        font-size: 1.75rem;
+    }
+    
+    .cs-benefit-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cs-features {
+        justify-content: center;
+    }
+    
+    .cs-action-area {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .cs-premium-section {
+        padding: 3rem 0;
+    }
+    
+    .cs-product-title {
+        font-size: 1.5rem;
+    }
+    
+    .cs-percent-number {
+        font-size: 2rem;
+    }
+    
+    .cs-features {
+        flex-direction: column;
+        align-items: center;
     }
 }
