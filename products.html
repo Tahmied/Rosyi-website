@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | Rosyi Beauty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #eb008b;
+            --secondary: #8c1080;
+            --accent: #02008d;
+            --white: #ffffff;
+            --gray-100: #f8fafc;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary), var(--accent));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--primary));
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-800);
+            overflow-x: hidden;
+            background-color: var(--gray-100);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(235, 0, 139, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo h2 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--gray-800);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .cart-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background: var(--gray-100);
+        }
+
+        .cart-icon {
+            font-size: 1.5rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background: var(--gray-800);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* Products Hero */
+        .products-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, rgba(235, 0, 139, 0.05) 0%, rgba(140, 16, 128, 0.05) 50%, rgba(2, 0, 141, 0.05) 100%);
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Products Grid */
+        .products-section {
+            padding: 4rem 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            color: var(--primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .product-description {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 0.875rem;
+        }
+
+        .rating-count {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-800);
+        }
+
+        .original-price {
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            text-decoration: line-through;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .view-details-btn {
+            flex: 1;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .view-details-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 3rem;
+        }
+
+        .pagination-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gray-200);
+            background: white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .pagination-btn.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .pagination-btn:hover:not(.active) {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer-v2 {
+            background: var(--gray-800);
+            color: white;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--gradient-primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .link-group h4 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group li {
+            margin-bottom: 0.75rem;
+        }
+
+        .link-group a {
+            color: var(--gray-300);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link-group a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-700);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .payment-methods p {
+            color: var(--gray-300);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .payment-icon {
+            font-size: 1.5rem;
+        }
+
+        .copyright {
+            color: var(--gray-300);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: var(--shadow-lg);
+                padding: 2rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+            
+            .product-image {
+                height: 220px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+            }
+            
+            .pagination {
+                gap: 0.5rem;
+            }
+            
+            .pagination-btn {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Rosyi</h2>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="products.html" class="nav-link active">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-btn">
+                    <span class="cart-icon">🛍️</span>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <h1 class="section-title">Our Premium Collection</h1>
+            <p class="section-subtitle">Discover our carefully curated selection of beauty essentials</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621336/pexels-photo-6621336.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Multi-Peptide Serum">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Skincare • Serum</span>
+                        <h3 class="product-name">Multi-Peptide + Copper Peptides Serum</h3>
+                        <p class="product-description">Advanced age-supporting serum with antioxidant protection</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(128)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$49.99</span>
+                            <span class="original-price">$59.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#copper-peptide-serum" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/4202924/pexels-photo-4202924.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Dr. Althea Cream">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Skincare • Moisturizer</span>
+                        <h3 class="product-name">Dr. Althea 345 Relief Cream</h3>
+                        <p class="product-description">Daily soothing moisturizer for blemish-prone skin</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(96)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$42.99</span>
+                            <span class="original-price">$49.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#dr-althea-cream" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Premium</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/4041392/pexels-photo-4041392.jpeg?auto=compress&cs=tinysrgb&w=600" alt="BIODANCE Mask">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Skincare • Mask</span>
+                        <h3 class="product-name">BIODANCE Bio-Collagen Mask</h3>
+                        <p class="product-description">Professional overnight treatment for intense hydration</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(204)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$68.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#biodance-mask" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6636305/pexels-photo-6636305.jpeg?auto=compress&cs=tinysrgb&w=600" alt="The Ordinary Hair Serum">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Hair Care • Serum</span>
+                        <h3 class="product-name">The Ordinary Hair Serum</h3>
+                        <p class="product-description">Peptide-powered formula for thicker, fuller-looking hair</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(87)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$24.99</span>
+                            <span class="original-price">$29.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#ordinary-hair-serum" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/4202925/pexels-photo-4202925.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bee Venom Gel">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Wellness • Gel</span>
+                        <h3 class="product-name">Bee Venom Professional Gel</h3>
+                        <p class="product-description">Natural relief for joints & muscles - 3 piece set</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <span class="rating-count">(142)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$36.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#bee-venom-gel" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-badge">Customer Favorite</div>
+                    <div class="product-image">
+                        <img src="https://images.pexels.com/photos/6621337/pexels-photo-6621337.jpeg?auto=compress&cs=tinysrgb&w=600" alt="COSRX Snail Mucin">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Skincare • Essence</span>
+                        <h3 class="product-name">COSRX Snail Mucin Essence</h3>
+                        <p class="product-description">Intensive hydrating serum for dull skin & fine lines</p>
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <span class="rating-count">(512)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$25.99</span>
+                            <span class="original-price">$32.99</span>
+                        </div>
+                        <div class="product-actions">
+                            <a href="#cosrx-snail-essence" class="view-details-btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn">←</button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn">→</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer-v2">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <h3>Rosyi</h3>
+                        <p>Premium beauty products for the modern woman. Discover your natural glow with our carefully curated collection.</p>
+                        
+                        <div class="social-links">
+                            <a href="#" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="link-group">
+                            <h4>Shop</h4>
+                            <ul>
+                                <li><a href="#">Skincare</a></li>
+                                <li><a href="#">Makeup</a></li>
+                                <li><a href="#">Hair Care</a></li>
+                                <li><a href="#">Fragrance</a></li>
+                                <li><a href="#">Tools & Brushes</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="link-group">
+                            <h4>Company</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Sustainability</a></li>
+                                <li><a href="#">Press</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Affiliates</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="link-group">
+                            <h4>Help</h4>
+                            <ul>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Shipping & Returns</a></li>
+                                <li><a href="#">Track Order</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="payment-methods">
+                        <p>We Accept</p>
+                        <div class="payment-icons">
+                            <span class="payment-icon">💳</span>
+                            <span class="payment-icon">📱</span>
+                            <span class="payment-icon">🏦</span>
+                            <span class="payment-icon">🔒</span>
+                        </div>
+                    </div>
+                    
+                    <div class="copyright">
+                        <p>&copy; 2025 Rosyi Beauty. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sticky navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Simple pagination
+        const paginationBtns = document.querySelectorAll('.pagination-btn');
+        paginationBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                paginationBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
